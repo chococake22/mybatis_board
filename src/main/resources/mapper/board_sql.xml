@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.chococake.mapper.BoardMapper">
+    <select id="findAll" resultType="com.example.chococake.vo.BoardListVo">
+        SELECT
+            board_idx, title, writer, type, content
+        FROM
+            TB_BOARD
+        ORDER BY
+            board_idx desc
+    </select>
+    <select id="boardCount" resultType="int">
+        SELECT
+            COUNT(*) AS Total
+        FROM
+            TB_BOARD
+    </select>
+    <insert id="insertBoard" parameterType="com.example.chococake.dto.BoardSaveDto" useGeneratedKeys="true" keyProperty="boardIdx">
+        INSERT INTO
+            TB_BOARD(title, writer, content, type)
+        VALUES
+            (#{title}, #{writer}, #{content}, #{type})
+    </insert>
+    <select id="getBoardInfo" parameterType="Long" resultType="com.example.chococake.vo.BoardDetailVo">
+        SELECT
+            *
+        FROM
+            TB_BOARD
+        WHERE board_idx = #{board_idx}
+    </select>
+    <update id="updateBoard" parameterType="com.example.chococake.dto.BoardUpdateDto">
+        UPDATE TB_BOARD
+        SET
+            title = #{title},
+            content = #{content}
+        WHERE id = #{board_idx}
+    </update>
+    <delete id="deleteBoard" parameterType="Long">
+        DELETE FROM TB_BOARD
+        WHERE id = #{board_idx}
+    </delete> 
+    
+</mapper>
