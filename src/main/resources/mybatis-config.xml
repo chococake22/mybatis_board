@@ -4,4 +4,14 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 
+    <settings>
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>
+    <typeAliases>
+        <typeAlias alias="BoardSaveDto" type="com.example.chococake.dto.BoardSaveDto"/>
+        <typeAlias alias="BoardUpdateDto" type="com.example.chococake.dto.BoardUpdateDto"/>
+        <typeAlias alias="BoardDetailVo" type="com.example.chococake.vo.BoardDetailVo"/>
+        <typeAlias alias="BoardListVo" type="com.example.chococake.vo.BoardListVo"/>
+    </typeAliases>
+
 </configuration>

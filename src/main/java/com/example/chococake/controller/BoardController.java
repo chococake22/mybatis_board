@@ -37,29 +37,29 @@ public class BoardController {
     }
 
     @GetMapping("/board/detail")
-    public String detailBoard(Model model, @RequestParam Long board_idx) {
-        BoardDetailVo board = boardService.getBoardDetail(board_idx);
+    public String detailBoard(Model model, @RequestParam Long boardIdx) {
+        BoardDetailVo board = boardService.getBoardDetail(boardIdx);
         model.addAttribute("board", board);
         return "/board/detail";
     }
 
     @GetMapping("/board/update")
-    public String updateBoard(Model model, @RequestParam Long board_idx) {
-        BoardDetailVo board = boardService.getBoardDetail(board_idx);
+    public String updateBoard(Model model, @RequestParam Long boardIdx) {
+        BoardDetailVo board = boardService.getBoardDetail(boardIdx);
         model.addAttribute("board", board);
         return "/board/update";
     }
 
     @PostMapping ("/board/update/check")
-    public String updateBoardChk(Model model, @RequestParam Long board_idx, BoardUpdateDto board) {
-        boardService.getBoardDetail(board_idx);
-        boardService.updateBoard(board, board_idx);
+    public String updateBoardChk(Model model, @RequestParam Long boardIdx, BoardUpdateDto board) {
+        boardService.getBoardDetail(boardIdx);
+        boardService.updateBoard(board, boardIdx);
         return "redirect:/";
     }
 
     @GetMapping("/board/delete")
-    public String deleteBoard(@RequestParam Long board_idx) {
-        boardService.deleteBoard(board_idx);
+    public String deleteBoard(@RequestParam Long boardIdx) {
+        boardService.deleteBoard(boardIdx);
         return "redirect:/";
     }
 }

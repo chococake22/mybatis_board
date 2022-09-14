@@ -11,7 +11,7 @@ import lombok.Setter;
 @Setter
 public class BoardUpdateDto {
 
-    private Long board_idx;
+    private Long boardIdx;
     private String title;
     private String writer;
     private String type;

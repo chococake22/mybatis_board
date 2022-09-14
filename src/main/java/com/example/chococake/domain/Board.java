@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Board {
 
-    private Long board_idx;
+    private Long boardIdx;
     private String title;
     private String writer;
     private String type;

@@ -21,8 +21,8 @@
         <tbody>
             <c:forEach items="${boards}" var="board">
                 <tr>
-                    <td><c:out value="${board.board_idx}"></c:out></td>
-                    <td><a href="/board/detail?board_idx=${board.board_idx}">${board.title}</a></td>
+                    <td><c:out value="${board.boardIdx}"></c:out></td>
+                    <td><a href="/board/detail?boardIdx=${board.boardIdx}">${board.title}</a></td>
                     <td><c:out value="${board.writer}"></c:out></td>
                     <td><c:out value="${board.content}"></c:out></td>
                 </tr>

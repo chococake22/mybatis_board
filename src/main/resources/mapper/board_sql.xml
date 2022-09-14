@@ -3,7 +3,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.example.chococake.mapper.BoardMapper">
-    <select id="findAll" resultType="com.example.chococake.vo.BoardListVo">
+    <select id="findAll" resultType="BoardListVo">
         SELECT
             board_idx, title, writer, type, content
         FROM
@@ -17,29 +17,29 @@
         FROM
             TB_BOARD
     </select>
-    <insert id="insertBoard" parameterType="com.example.chococake.dto.BoardSaveDto" useGeneratedKeys="true" keyProperty="boardIdx">
+    <insert id="insertBoard" parameterType="BoardSaveDto" useGeneratedKeys="true" keyProperty="boardIdx">
         INSERT INTO
             TB_BOARD(title, writer, content, type)
         VALUES
             (#{title}, #{writer}, #{content}, #{type})
     </insert>
-    <select id="getBoardInfo" parameterType="Long" resultType="com.example.chococake.vo.BoardDetailVo">
+    <select id="getBoardInfo" parameterType="Long" resultType="BoardDetailVo">
         SELECT
             *
         FROM
             TB_BOARD
-        WHERE board_idx = #{board_idx}
+        WHERE board_idx = #{boardIdx}
     </select>
-    <update id="updateBoard" parameterType="com.example.chococake.dto.BoardUpdateDto">
+    <update id="updateBoard" parameterType="BoardUpdateDto">
         UPDATE TB_BOARD
         SET
             title = #{title},
             content = #{content}
-        WHERE id = #{board_idx}
+        WHERE board_idx = #{boardIdx}
     </update>
     <delete id="deleteBoard" parameterType="Long">
         DELETE FROM TB_BOARD
-        WHERE id = #{board_idx}
-    </delete> 
+        WHERE board_idx = #{boardIdx}
+    </delete>
     
 </mapper>

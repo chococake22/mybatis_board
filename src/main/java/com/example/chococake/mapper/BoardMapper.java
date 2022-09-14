@@ -21,11 +21,11 @@ public interface BoardMapper {
 
     void insertBoard(BoardSaveDto board);
 
-    BoardDetailVo getBoardInfo(Long board_idx);
+    BoardDetailVo getBoardInfo(Long boardIdx);
 
     void deleteBoard(Long boardIdx);
 
     void updateBoard(BoardUpdateDto board);
 
-    Board getBoard(Long board_idx);
+    Board getBoard(Long boardIdx);
 }

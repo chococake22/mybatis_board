@@ -33,12 +33,12 @@ public class BoardServiceImpl implements BoardService {
     }
 
     @Override
-    public BoardDetailVo getBoardDetail(Long board_idx) {
-        return boardMapper.getBoardInfo(board_idx);
+    public BoardDetailVo getBoardDetail(Long boardIdx) {
+        return boardMapper.getBoardInfo(boardIdx);
     }
 
     @Override
-    public void updateBoard(BoardUpdateDto board, Long board_idx) {
+    public void updateBoard(BoardUpdateDto board, Long boardIdx) {
         boardMapper.updateBoard(board);
     }
 

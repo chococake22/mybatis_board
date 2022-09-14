@@ -11,7 +11,7 @@
 
     <form action="/board/update/check" method="post">
         제목 : <input type="text" value="${board.title}" id="title" name="title"> <br>
-        번호 :  <input type="text" value="${board.board_idx}" id="board_idx" name="board_idx" readonly> <br>
+        번호 :  <input type="text" value="${board.boardIdx}" id="boardIdx" name="boardIdx" readonly> <br>
         작성자 : <input type="text" value="${board.writer}" id="writer" name="writer" readonly> <br>
         내용 : <input type="text" value="${board.content}" id="content" name="content"> <br>
         분류 : <input type="text" value="${board.type}" id="type" name="type"> <br>
